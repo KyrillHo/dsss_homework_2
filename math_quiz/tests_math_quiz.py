@@ -1,5 +1,5 @@
 import unittest
-from dsss_homework_2.math_quiz.math_quiz import function_A, function_B, function_C
+from dsss_homework_2.math_quiz.math_quiz import function_A, function_B, calculate_problem
 
 
 class TestMathGame(unittest.TestCase):
