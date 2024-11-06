@@ -30,6 +30,7 @@ def calculate_problem(n1, n2, o):
 def math_quiz():
     score = 0 
     number_of_questions = 3
+    
 
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
