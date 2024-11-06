@@ -1,5 +1,5 @@
 import unittest
-from dsss_homework_2.math_quiz.math_quiz import function_A, function_B, calculate_problem
+from math_quiz import random_from_to, random_operator, calculate_problem
 
 
 class TestMathGame(unittest.TestCase):
@@ -9,22 +9,23 @@ class TestMathGame(unittest.TestCase):
         min_val = 1
         max_val = 10
         for _ in range(1000):  # Test a large number of random values
-            rand_num = function_A(min_val, max_val)
+            rand_num = random_from_to(min_val, max_val)
             self.assertTrue(min_val <= rand_num <= max_val)
 
     def test_function_B(self):
-        # TODO
-        pass
+        for _ in range(1000):
+            rand_op = random_operator()
+            self.assertTrue(rand_op in ['+', '-', '*'])
 
     def test_function_C(self):
             test_cases = [
                 (5, 2, '+', '5 + 2', 7),
-                ''' TODO add more test cases here '''
+                (1,3,'-', '1 - 3', -2)
             ]
 
             for num1, num2, operator, expected_problem, expected_answer in test_cases:
-                # TODO
-                pass
+                self.assertEqual(calculate_problem(num1,num2,operator)[0],expected_problem)
+                self.assertEqual(calculate_problem(num1,num2,operator)[1],expected_answer)
 
 if __name__ == "__main__":
     unittest.main()
